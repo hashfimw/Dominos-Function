@@ -1,4 +1,3 @@
-// utils/dominoUtils.ts
 export type Domino = [number, number];
 
 // Show all domino cards
@@ -9,7 +8,6 @@ export const countDoubleNumbers = (source: Domino[]): number => {
   return source.filter(([a, b]) => a === b).length;
 };
 
-// Sort domino cards
 export const sortDominoes = (
   source: Domino[],
   order: "asc" | "desc"
@@ -26,8 +24,6 @@ export const sortDominoes = (
   });
 };
 
-// Remove duplicates
-
 export const removeDuplicates = (source: Domino[]): Domino[] => {
   const sumFrequency = new Map<number, number>();
 
@@ -40,12 +36,11 @@ export const removeDuplicates = (source: Domino[]): Domino[] => {
   // Langkah 2: Hapus semua pasangan dengan penjumlahan yang muncul lebih dari sekali
   return source.filter(([a, b]) => sumFrequency.get(a + b) === 1);
 };
-// Flip domino cards
+
 export const flipDominoes = (source: Domino[]): Domino[] => {
   return source.map(([a, b]) => [b, a]);
 };
 
-// Remove cards with a specific total number
 export const removeByTotal = (source: Domino[], total: number): Domino[] => {
   return source.filter(([a, b]) => a + b !== total);
 };

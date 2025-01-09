@@ -9,7 +9,7 @@ import {
   removeDuplicates,
   resetDominoes,
   sortDominoes,
-  addDominoes, // Impor fungsi addDominoes
+  addDominoes,
 } from "@/components/utilsFunc";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const defaultData: Domino[] = [
   [1, 2],
 ];
 
-export default function Home() {
+export default function HomePage() {
   const [sourceDominoes, setSourceDominoes] = useState<Domino[]>(defaultData); // Data asli (source)
   const [dominoes, setDominoes] = useState<Domino[]>(defaultData); // Data hasil manipulasi
   const [inputNumber, setInputNumber] = useState("");
@@ -70,7 +70,6 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen bg-gray-200 mx-auto">
-      {/* Sidebar */}
       <div className="w-1/5 bg-gray-600 text-white p-6 rounded-e-3xl">
         <h2 className="text-2xl font-bold mb-6">Domino Functions</h2>
         <div className="flex flex-col gap-4">
@@ -121,7 +120,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Add Domino */}
           <div className="mt-4">
             <input
               type="text"
@@ -142,7 +140,6 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="w-3/4 p-6 container mx-auto ">
-        {/* Source Section */}
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 ">Source</h2>
           <div className="border rounded-xl bg-slate-400 p-8">
@@ -188,7 +185,6 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-gray-700 w-full">
                 Double Numbers :
               </h2>
-              {/* Menampilkan jumlah double numbers */}
               <input
                 readOnly
                 value={countDoubleNumbers(sourceDominoes)}
