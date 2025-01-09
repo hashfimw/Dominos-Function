@@ -24,9 +24,9 @@ export const sortDominoes = (
   });
 };
 
+// remove domino cards with the same total number and number combination.
 export const removeDuplicates = (source: Domino[]): Domino[] => {
   const sumFrequency = new Map<number, number>();
-
   // Langkah 1: Hitung frekuensi total penjumlahan
   for (const [a, b] of source) {
     const sum = a + b;
@@ -51,5 +51,5 @@ export const addDominoes = (
 ): Domino[] => {
   return [...source, ...newDominoes];
 };
-// Reset data
+
 export const resetDominoes = (defaultData: Domino[]): Domino[] => defaultData;
